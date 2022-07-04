@@ -166,9 +166,8 @@ export const AmazonProvider = ({ children }) => {
       const receipt = await transaction.wait()
 
       if (receipt) {
-        //You can do this but it's not necessary with Moralis hooks!
-        // const query = new Moralis.Query('_User')
-        // const results = await query.find()
+        const query = new Moralis.Query('_User')
+        const results = await query.find()
 
         const res = userData[0].add('ownedAsset', {
           ...asset,
